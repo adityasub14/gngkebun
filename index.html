@@ -57,7 +57,7 @@ button{cursor:pointer}
 .board-footer .board-report-link{display:inline-flex;align-items:center;gap:6px;background:var(--lime-soft);color:var(--forest)!important;border:1px solid var(--lime-deep);padding:7px 13px;border-radius:999px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:.2s}
 .board-footer .board-report-link:hover{background:var(--lime);transform:translateY(-1px)}
 /* TICKER */
-.ticker{min-height:36px;background:var(--forest-3);color:#E9F2DF;display:flex;align-items:center;overflow:hidden;position:relative;z-index:30;border-bottom:1px solid rgba(217,255,61,.18);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.02em;white-space:nowrap}
+.ticker{min-height:36px;background:var(--forest-3);color:#7cff11;display:flex;align-items:center;overflow:hidden;position:relative;z-index:30;border-bottom:1px solid rgb(241, 241, 237);font-family:var(--font-mono);font-size:13px;letter-spacing:.02em;white-space:nowrap}
 .ticker::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg, var(--forest-3) 0%, transparent 8%, transparent 92%, var(--forest-3) 100%)}
 .ticker-track{display:flex;width:max-content;animation:ticker 38s linear infinite}
 .ticker-group{display:flex;align-items:center;gap:28px;padding-right:28px}
@@ -94,7 +94,7 @@ header.scrolled{box-shadow:0 12px 32px -16px rgba(14,33,23,.25);background:rgba(
 .hero-orb.o1{width:420px;height:420px;background:radial-gradient(circle, rgba(217,255,61,.55), transparent 70%);top:-120px;right:-80px}
 .hero-orb.o2{width:360px;height:360px;background:radial-gradient(circle, rgba(20,153,69,.18), transparent 70%);bottom:-120px;left:-100px}
 .hero-leaf{position:absolute;right:36%;top:10px;opacity:.07;transform:rotate(12deg)}
-.hero-img-card{position:absolute;right:-8px;top:-124px;width:148px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:6px;box-shadow:var(--sh-md);transform:rotate(6deg);overflow:hidden;z-index:4;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.hero-img-card{position:absolute;right:-8px;top:-60px;width:148px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:3px;box-shadow:var(--sh-md);transform:rotate(6deg);overflow:hidden;z-index:4;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .hero-img-card img{width:100%;height:86px;object-fit:cover;border-radius:10px;display:block;filter:saturate(1.15) contrast(1.05)}
 .hero-img-card span{display:block;font:600 8px var(--font-mono);letter-spacing:.08em;color:var(--forest);padding:7px 6px 4px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hero-img-card::after{content:"SUMATERA";position:absolute;top:12px;left:12px;background:rgba(14,33,23,.82);backdrop-filter:blur(6px);color:var(--lime);font:700 7.5px var(--font-mono);letter-spacing:.1em;padding:4px 7px;border-radius:99px;border:1px solid rgba(217,255,61,.4)}
@@ -115,7 +115,8 @@ h1 .highlight::after{content:"";position:absolute;height:13px;background:linear-
 .hero-badges{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
 .hero-badges span{font:600 9px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.7);border:1px solid var(--line);padding:6px 10px;border-radius:99px;color:var(--forest);backdrop-filter:blur(6px)}
 /* STAMP */
-.hero-stamp-wrap{justify-self:end;position:relative;width:322px;max-width:100%}
+.hero-stamp-wrap{justify-self:end;position:relative;width:322px;max-width:100%;margin-right:60px}
+.stamp-shift{position:relative;transform:translate(-135px, 15px)}
 .hero-stamp{width:100%;background:linear-gradient(165deg, #0F261B 0%, #163927 55%, #0D1F15 100%);border:1px solid rgba(217,255,61,.26);border-radius:var(--r-l);padding:19px 19px 17px;color:#F3F7E8;position:relative;overflow:hidden;box-shadow:var(--sh-lg), inset 0 1px 0 rgba(255,255,255,.14);transform:rotate(1.2deg);transition:.4s;z-index:2}
 .hero-stamp:hover{transform:rotate(0deg) translateY(-4px)}
 .hero-stamp::before{content:"";position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:radial-gradient(circle, rgba(217,255,61,.26), transparent 70%);border-radius:50%}
@@ -281,7 +282,8 @@ footer::before{content:"GUNUNGKEBUN";position:absolute;bottom:-18px;left:50%;tra
 @media (max-width:920px){
 .hero{grid-template-columns:1fr;gap:28px;padding:40px 20px 26px}
 h1{font-size:clamp(33px,9vw,50px)}
-.hero-stamp-wrap{justify-self:start;width:min(340px,100%);margin-top:104px}
+.hero-stamp-wrap{justify-self:start;width:min(340px,100%);margin-top:104px;margin-right:0}
+.stamp-shift{transform:none}
 .hero-stamp{transform:rotate(0)}
 .hero-img-card{top:-96px;right:10px;width:126px}
 .hero-img-card img{height:56px}
@@ -339,6 +341,12 @@ h1{font-size:clamp(33px,9vw,50px)}
 <span>Kalimantan Timur: <b>Rp.2.927</b></span><span class="sep">/</span>
 <span>Kalimantan Selatan: <b>Rp.2.970</b></span><span class="sep">/</span>
 <span>Kalimantan Utara: <b>Rp.2.950</b></span><span class="sep">/</span>
+<span>Sulawesi Barat: <b>Rp.2.949</b></span><span class="sep">/</span>
+<span>Sulawesi Tengah: <b>Rp.2.930</b></span><span class="sep">/</span>
+<span>Sulawesi Selatan: <b>Rp.2.830</b></span><span class="sep">/</span>
+<span>Sulawesi Tenggara: <b>Rp.2.855</b></span><span class="sep">/</span>
+<span>Gorontalo: <b>Rp.2.882</b></span><span class="sep">/</span>
+<span>Papua Barat: <b>Rp.2.725</b></span><span class="sep">/</span>
 </div>
 <div class="ticker-group" aria-hidden="true">
 <span><span class="dot"></span><b>HARGA TBS SUMATERA</b></span><span class="sep">/</span>
@@ -355,6 +363,7 @@ h1{font-size:clamp(33px,9vw,50px)}
 <span>Kalimantan Timur: <b>Rp.2.927</b></span><span class="sep">/</span>
 <span>Kalimantan Selatan: <b>Rp.2.970</b></span><span class="sep">/</span>
 <span>Kalimantan Utara: <b>Rp.2.950</b></span><span class="sep">/</span>
+<span>Sulawesi Barat: <b>Rp.2.949</b></span><span class="sep">/</span>
 </div>
 </div>
 </div>
@@ -370,14 +379,14 @@ h1{font-size:clamp(33px,9vw,50px)}
 </a>
 <div class="nav-links">
 <a class="active" href="#harga">Harga TBS</a>
-<a href="#tentang">Tentang Kami</a>
+<a href="#tentang">Tentang</a>
 </div>
 <a href="#harga" class="nav-cta">CEK HARGA <i>↗</i></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
 </nav>
 <div class="mobile-links" id="mobileLinks">
 <a href="#harga">Harga TBS</a>
-<a href="#tentang">Tentang Kami</a>
+<a href="#tentang">Tentang</a>
 </div>
 </header>
 <section class="hero">
@@ -391,14 +400,12 @@ h1{font-size:clamp(33px,9vw,50px)}
   Data jelas, mudah dibaca, untuk keputusan panen yang lebih tepat</p>
 <div class="hero-meta">
 </div>
-<div class="hero-badges"><span>◉ <span data-count="provinsi">8</span> Provinsi</span><span>◉ <span data-count="kabkota">32</span> Kab / Kota</span><span>◉ <span data-count="kecamatan">128</span> Kecamatan</span></div>
 </div>
-<div class="hero-stamp-wrap reveal visible"><p>
-  
-</p>
+<div class="hero-stamp-wrap reveal visible">
 <!-- GANTI FOTO DI SINI: -->
 <div class="hero-img-card"><img src="tandan.jpg" alt="Kebun sawit"><span>TBS• Sekernan<br>Muaro Jambi</span></div>
 <!-- akhir bagian foto Kebun Sawit -->
+<div class="stamp-shift">
 <div class="stamp-float">RATA-RATA WILAYAH</div>
 <aside class="hero-stamp" id="heroStamp" aria-label="Ringkasan harga rata-rata">
 <div class="stamp-shine"></div>
@@ -418,14 +425,20 @@ h1{font-size:clamp(33px,9vw,50px)}
 <div class="stamp-price"><small>RP</small><span id="stampNumberSulawesi">0</span><small>/KG</small></div>
 <div class="stamp-change">DATA DARI<span id="stampKecSulawesi">0</span>KECAMATAN</div>
 </div>
+<div class="stamp-slide" data-slide="3">
+<div class="stamp-top"><span>PAPUA</span><span class="stamp-date-el">18.09.2026</span></div>
+<div class="stamp-price"><small>RP</small><span id="stampNumberPapua">0</span><small>/KG</small></div>
+<div class="stamp-change">DATA DARI<span id="stampKecPapua">0</span>KECAMATAN</div>
 </div>
-<div class="stamp-dots" id="stampDots"><span class="dot active"></span><span class="dot"></span><span class="dot active"></span></div>
+</div>
+<div class="stamp-dots" id="stampDots"><span class="dot active"></span><span class="dot"></span><span class="dot active"></span><span class="dot active"></span></div>
 <div class="stamp-spark">
 <svg viewBox="0 0 260 44" preserveAspectRatio="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9FF3D" stop-opacity=".5"/><stop offset="1" stop-color="#D9FF3D" stop-opacity="0"/></linearGradient></defs><path id="sparkFill" d="M0,34 L32,30 L65,32 L98,24 L130,26 L163,18 L196,20 L228,10 L260,12 L260,44 L0,44 Z" fill="url(#lg)"/><path id="sparkLine" d="M0,34 L32,30 L65,32 L98,24 L130,26 L163,18 L196,20 L228,10 L260,12" fill="none" stroke="#D9FF3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="260" cy="12" r="3.5" fill="#D9FF3D"/></svg>
-<div><span id="stampRegionLabel" style="color:#b9fd31">SUMATERA</span></div>
+<div><span id="stampRegionLabel" style="color:#7ad747">SUMATERA</span></div>
 </div>
 </aside>
 <div class="stamp-shadow"></div>
+</div>
 </div>
 </section>
 <section class="search-section" id="harga">
@@ -433,7 +446,7 @@ h1{font-size:clamp(33px,9vw,50px)}
 <div class="search-grid">
 <div class="search-title">
 <h3>Mulai dari wilayah Anda</h3>
-<div class="wilayah-pills"><span><span data-count="kabkota">135</span> KAB/KOTA</span><span><span data-count="kecamatan">337</span> KECAMATAN</span></div>
+<br>
 </div>
 <form class="search-form" id="priceForm">
 <div class="field">
@@ -460,6 +473,7 @@ h1{font-size:clamp(33px,9vw,50px)}
 <option value="Sulawesi Selatan">Sulawesi Selatan</option>
 <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
 <option value="Gorontalo">Gorontalo</option>
+<option value="Papua Barat">Papua Barat</option>
 </select>
 </div>
 </div>
@@ -599,7 +613,9 @@ const siteHeader=document.getElementById('siteHeader');
    RENDER TICKER OTOMATIS
    TICKER_PROVINCES:
 ========================================================= */
-const TICKER_PROVINCES=["Riau","Sumatera Utara","Sumatera Barat","Jambi","Bengkulu","Lampung","Kepulauan Bangka Belitung","Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara"];
+const TICKER_PROVINCES=["Riau","Sumatera Utara","Sumatera Barat","Jambi","Bengkulu","Lampung","Kepulauan Bangka Belitung","Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara",
+                          "Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Papua Barat"
+];
 
 function hitungRataProvinsi(prov){
   if(!hargaTBS[prov])return null;
@@ -631,11 +647,12 @@ const URL_API_HARGA="https://script.google.com/macros/s/AKfycby7Neph2HMxlhaapyN4
 /* provinsi di daftar ini yang ditampilkan di dropdown,
    walau sheet punya provinsi lain (mis. Kepulauan Bangka Belitung).
    Tambah/hapus nama provinsi di sini kalau mau ubah cakupan. */
-const ALLOWED_PROVINCES=["Aceh","Sumatera Utara","Sumatera Barat","Riau","Jambi","Sumatera Selatan","Kepulauan Bangka Belitung","Bengkulu","Lampung","Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara","Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo"];
+const ALLOWED_PROVINCES=["Aceh","Sumatera Utara","Sumatera Barat","Riau","Jambi","Sumatera Selatan","Kepulauan Bangka Belitung","Bengkulu","Lampung","Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara","Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Papua Barat"];
 const KALIMANTAN_PROVINCES=["Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara"];
 const SULAWESI_PROVINCES=["Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo"];
+const PAPUA_PROVINCES=["Papua Barat"];
 
-const PROV_CODE={"Aceh":"BTJ","Sumatera Utara":"KNO","Sumatera Barat":"PDG","Riau":"PKU","Jambi":"DJB","Sumatera Selatan":"PLM","Bengkulu":"BKS","Lampung":"TKG","Kepulauan Bangka Belitung":"PGK","Kalimantan Barat":"PNK","Kalimantan Tengah":"PKY","Kalimantan Timur":"BPN","Kalimantan Selatan":"BDJ","Kalimantan Utara":"TRK","Sulawesi Barat":"MJU","Sulawesi Tengah":"PLW","Sulawesi Selatan":"UPG","Sulawesi Tenggara":"KDI","Gorontalo":"GTO"};
+const PROV_CODE={"Aceh":"BTJ","Sumatera Utara":"KNO","Sumatera Barat":"PDG","Riau":"PKU","Jambi":"DJB","Sumatera Selatan":"PLM","Bengkulu":"BKS","Lampung":"TKG","Kepulauan Bangka Belitung":"PGK","Kalimantan Barat":"PNK","Kalimantan Tengah":"PKY","Kalimantan Timur":"BPN","Kalimantan Selatan":"BDJ","Kalimantan Utara":"TRK","Sulawesi Barat":"MJU","Sulawesi Tengah":"PLW","Sulawesi Selatan":"UPG","Sulawesi Tenggara":"KDI","Gorontalo":"GTO","Papua Barat":"MKW",};
 
 /* =========================================================
    ESTIMASI HARGA PER USIA TANAMAN
@@ -854,10 +871,14 @@ function updateStampAverage(){
   const sulawesi=computeRegionAvg(SULAWESI_PROVINCES);
   animateCount(document.getElementById('stampNumberSulawesi'),sulawesi.avg*0.9,sulawesi.avg,"");
   document.getElementById('stampKecSulawesi').textContent=sulawesi.count;
+
+  const papua=computeRegionAvg(PAPUA_PROVINCES);
+  animateCount(document.getElementById('stampNumberPapua'),papua.avg*0.9,papua.avg,"");
+  document.getElementById('stampKecPapua').textContent=papua.count;
 }
-/* Kartu hero bergantian otomatis antara Sumatera & Kalimantan & sulawesi tiap beberapa detik */
+/* Kartu hero bergantian otomatis antara Sumatera & Kalimantan & sulawesi & Papua tiap beberapa detik */
 let stampSlideIdx=0;
-const STAMP_REGION_LABELS=["SUMATERA","KALIMANTAN","SULAWESI"];
+const STAMP_REGION_LABELS=["SUMATERA","KALIMANTAN","SULAWESI","PAPUA",];
 function showStampSlide(i){
   document.querySelectorAll('.stamp-slide').forEach((el,idx)=>{
     el.classList.toggle('active', idx===i);
