@@ -1,5 +1,5 @@
 <html lang="id"><head>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-99MW2W8BW9"></scripth>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-99MW2W8BW9"></script>
 <script> window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', 'G-99MW2W8BW9');</script>
 <meta charset="UTF-8">
@@ -454,9 +454,9 @@ h1{font-size:clamp(33px,9vw,50px)}
 <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div>
 </div>
 <div class="info-card green reveal visible">
-<div class="card-label">Catatan untuk petani</div>
-<div class="trend-value" style="font-size:19px;letter-spacing:-.03em;">CEK SEBELUM JUAL</div>
-<p style="opacity:.82">TBS untuk memilih Pengepul tujuan</p>
+<div class="card-label">Kondisi Jarak &amp; Medan Ke Ramp/PKS</div>
+<div class="trend-value" id="jarakValue" style="font-size:16px;line-height:1.3;letter-spacing:-.02em;">Pilih kabupaten/kota untuk melihat kondisi jarak</div>
+<p style="opacity:.82">Cek sebelum jual TBS untuk memilih pengepul tujuan</p>
 </div>
 </aside>
 </div>
@@ -738,6 +738,75 @@ if(!district.value){showToast('Pilih kecamatan terlebih dahulu.',false);district
 renderBoard(province.value,regency.value,district.value,true);
 showToast('Menampilkan harga Kec. '+district.value+', '+regency.value+'.',true);
 });
+/* =========================================================
+   KONDISI JARAK & MEDAN KE RAMP/PKS  (data dari tab 'Kategori_Jarak')
+   Cara isi URL: di Google Sheet -> File > Share > Publish to web ->
+   pilih tab 'Kategori_Jarak' + format CSV -> Publish -> tempel link-nya di bawah.
+   Kalau dikosongkan, kartu menampilkan pesan "belum ada data" (web tetap jalan normal).
+========================================================= */
+const URL_KATEGORI_JARAK="https://docs.google.com/spreadsheets/d/e/2PACX-1vSewWgXLwCcRlq9HclGwZqYw2hqfTkAaTRicApDEWdiRrdZVRCPyMbHTmQYPOS91pb1ZeevyJJ4JAbT/pub?gid=779572419&single=true&output=csv";
+const jarakValue=document.getElementById('jarakValue');
+let kategoriJarak={};
+let kategoriStatus="memuat"; // memuat | siap | gagal
+function normKey(s){return String(s||"").toLowerCase().replace(/\./g,"").replace(/\s+/g,"").replace(/^kabupaten/,"kab");}
+function parseCSV(text){
+  const rows=[];let row=[],cur="",q=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(q){
+      if(c==='"'){if(text[i+1]==='"'){cur+='"';i++;}else{q=false;}}
+      else{cur+=c;}
+    }else if(c==='"'){q=true;}
+    else if(c===','){row.push(cur);cur="";}
+    else if(c==='\n'||c==='\r'){
+      if(c==='\r'&&text[i+1]==='\n')i++;
+      row.push(cur);cur="";
+      if(row.some(x=>x.trim()!==""))rows.push(row);
+      row=[];
+    }else{cur+=c;}
+  }
+  row.push(cur);
+  if(row.some(x=>x.trim()!==""))rows.push(row);
+  return rows;
+}
+function updateJarak(){
+  if(!jarakValue)return;
+  if(!regency.value){jarakValue.textContent="Pilih kabupaten/kota untuk melihat kondisi jarak";return;}
+  if(kategoriStatus==="memuat"){jarakValue.textContent="Memuat data kondisi jarak...";return;}
+  if(kategoriStatus==="gagal"){jarakValue.textContent="Data kondisi jarak belum bisa dimuat. Coba muat ulang halaman.";return;}
+  const kunci=normKey(province.value)+"|"+normKey(regency.value);
+  const t=kategoriJarak[kunci];
+  if(!t)console.warn("Kondisi jarak: tidak ketemu untuk",kunci,"| yang termuat:",Object.keys(kategoriJarak));
+  jarakValue.textContent=t||"Belum ada data kondisi jarak untuk wilayah ini";
+}
+function muatKategoriJarak(){
+  if(!URL_KATEGORI_JARAK){console.warn("Kondisi jarak: URL_KATEGORI_JARAK masih kosong.");kategoriStatus="gagal";return Promise.resolve();}
+  return fetch(URL_KATEGORI_JARAK)
+    .then(res=>{if(!res.ok)throw new Error("Status "+res.status);return res.text();})
+    .then(txt=>{
+      const rows=parseCSV(txt.replace(/^\uFEFF/,""));
+      if(!rows.length)return;
+      const head=rows[0].map(h=>h.trim().toLowerCase());
+      const iP=head.indexOf("provinsi"),iK=head.indexOf("kabupaten"),iJ=head.indexOf("kategori_jarak");
+      if(iP<0||iK<0||iJ<0)throw new Error("Header tab Kategori_Jarak harus: provinsi, kabupaten, kategori_jarak");
+      const peta={};
+      rows.slice(1).forEach(r=>{
+        const j=(r[iJ]||"").trim();
+        if(r[iP]&&r[iK]&&j)peta[normKey(r[iP])+"|"+normKey(r[iK])]=j;
+      });
+      kategoriJarak=peta;
+      kategoriStatus="siap";
+      updateJarak();
+    })
+    .catch(err=>{
+      console.error("Gagal memuat kategori jarak:",err);
+      kategoriStatus="gagal";
+      updateJarak();
+    });
+}
+province.addEventListener('change',updateJarak);
+regency.addEventListener('change',updateJarak);
+muatKategoriJarak();
 menuToggle.addEventListener('click',function(){
 mobileLinks.classList.toggle('open');
 menuToggle.textContent=mobileLinks.classList.contains('open')?'×':'☰';
