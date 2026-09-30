@@ -211,8 +211,8 @@ h2 span{font-style:italic;background:linear-gradient(transparent 62%, var(--lime
 .info-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
 .info-card.dark{background:linear-gradient(155deg, #102619 0%, #1B3F2B 100%);color:#F1F6E8;border-color:rgba(217,255,61,.22)}
 .info-card.dark::before{content:"";position:absolute;top:-40px;right:-40px;width:140px;height:140px;background:radial-gradient(circle, rgba(217,255,61,.22), transparent 70%);border-radius:50%}
-.info-card.green{background:linear-gradient(155deg, var(--lime) 0%, #829b51 100%);border-color:rgb(243, 247, 245);color:var #FFFFFF (--forest)}
-.info-card.green::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(229, 239, 234, 0.983) 1px, transparent 1px);background-size:14px 14px;opacity:.5;pointer-events:none}
+.info-card.green{background:linear-gradient(155deg, var(--lime) 0%, #686c57 100%);border-color:rgba(20,32,26,.12);color:var(--forest)}
+.info-card.green::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(14,33,23,.12) 1px, transparent 1px);background-size:14px 14px;opacity:.5;pointer-events:none}
 .card-label{font:600 12px var(--font-mono);letter-spacing:.12em;text-transform:uppercase;opacity:.75;display:flex;align-items:center;gap:7px}
 .card-label::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .trend-value{margin:10px 0 4px;font:700 22px/1 var(--font-grot);letter-spacing:-.04em;position:relative;z-index:1}
@@ -313,16 +313,16 @@ h1{font-size:clamp(33px,9vw,50px)}
 </style>
 </head>
 <body>
-<!-- ======
+<!-- =======
      TICKER BAR 
-     Provinsi yang ditampilkan diatur lewat variabel TICKER_PROVINCES.
-============ -->
+  
+========-->
 <div class="grain"></div>
 <div class="ticker" aria-label="Informasi pembaruan harga">
 <div class="ticker-track" id="tickerTrack"><div class="ticker-group"><span><span class="dot"></span><b>HARGA TBS Swadaya</b></span><span class="sep">/</span><span>Data per kecamatan • Update di hari kerja</span><span class="sep">/</span><span>Aceh: <b>Rp 2.984/kg</b></span><span class="sep">/</span><span>Riau: <b>Rp 3.219/kg</b></span><span class="sep">/</span><span>Sumatera Utara: <b>Rp 3.255/kg</b></span><span class="sep">/</span><span>Sumatera Barat: <b>Rp 3.203/kg</b></span><span class="sep">/</span><span>Jambi: <b>Rp 3.264/kg</b></span><span class="sep">/</span><span>Bengkulu: <b>Rp 2.847/kg</b></span><span class="sep">/</span><span>Lampung: <b>Rp 2.897/kg</b></span><span class="sep">/</span><span>Kepulauan Bangka Belitung: <b>Rp 3.016/kg</b></span><span class="sep">/</span><span>Kalimantan Barat: <b>Rp 3.166/kg</b></span><span class="sep">/</span><span>Kalimantan Tengah: <b>Rp 3.088/kg</b></span><span class="sep">/</span><span>Kalimantan Timur: <b>Rp 2.831/kg</b></span><span class="sep">/</span><span>Kalimantan Selatan: <b>Rp 2.978/kg</b></span><span class="sep">/</span><span>Kalimantan Utara: <b>Rp 2.815/kg</b></span><span class="sep">/</span><span>Sulawesi Barat: <b>Rp 2.900/kg</b></span><span class="sep">/</span><span>Sulawesi Tengah: <b>Rp 2.993/kg</b></span><span class="sep">/</span><span>Sulawesi Selatan: <b>Rp 2.879/kg</b></span><span class="sep">/</span><span>Sulawesi Tenggara: <b>Rp 2.784/kg</b></span><span class="sep">/</span><span>Gorontalo: <b>Rp 2.882/kg</b></span><span class="sep">/</span><span>Papua Barat: <b>Rp 2.733/kg</b></span><span class="sep">/</span></div><div class="ticker-group" aria-hidden="true"><span><span class="dot"></span><b>HARGA TBS Swadaya</b></span><span class="sep">/</span><span>Data per kecamatan • Update di hari kerja</span><span class="sep">/</span><span>Aceh: <b>Rp 2.984/kg</b></span><span class="sep">/</span><span>Riau: <b>Rp 3.219/kg</b></span><span class="sep">/</span><span>Sumatera Utara: <b>Rp 3.255/kg</b></span><span class="sep">/</span><span>Sumatera Barat: <b>Rp 3.203/kg</b></span><span class="sep">/</span><span>Jambi: <b>Rp 3.264/kg</b></span><span class="sep">/</span><span>Bengkulu: <b>Rp 2.847/kg</b></span><span class="sep">/</span><span>Lampung: <b>Rp 2.897/kg</b></span><span class="sep">/</span><span>Kepulauan Bangka Belitung: <b>Rp 3.016/kg</b></span><span class="sep">/</span><span>Kalimantan Barat: <b>Rp 3.166/kg</b></span><span class="sep">/</span><span>Kalimantan Tengah: <b>Rp 3.088/kg</b></span><span class="sep">/</span><span>Kalimantan Timur: <b>Rp 2.831/kg</b></span><span class="sep">/</span><span>Kalimantan Selatan: <b>Rp 2.978/kg</b></span><span class="sep">/</span><span>Kalimantan Utara: <b>Rp 2.815/kg</b></span><span class="sep">/</span><span>Sulawesi Barat: <b>Rp 2.900/kg</b></span><span class="sep">/</span><span>Sulawesi Tengah: <b>Rp 2.993/kg</b></span><span class="sep">/</span><span>Sulawesi Selatan: <b>Rp 2.879/kg</b></span><span class="sep">/</span><span>Sulawesi Tenggara: <b>Rp 2.784/kg</b></span><span class="sep">/</span><span>Gorontalo: <b>Rp 2.882/kg</b></span><span class="sep">/</span><span>Papua Barat: <b>Rp 2.733/kg</b></span><span class="sep">/</span></div></div>
 </div>
 
-<!-- =akhir bagian TICKER BAR =-->
+<!-- ==== akhir bagian TICKER BAR ==== -->
 <header id="siteHeader" class="">
 <div class="scroll-progress" id="scrollProgress" style="width: 0%;"></div>
 <nav class="nav">
@@ -335,7 +335,6 @@ h1{font-size:clamp(33px,9vw,50px)}
 <a class="active" href="#harga">Harga TBS</a>
 <a href="#tentang">Tentang</a>
 </div>
-<a href="#harga" class="nav-cta">CEK HARGA <i>✦</i></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
 </nav>
 <div class="mobile-links" id="mobileLinks">
@@ -355,31 +354,31 @@ h1{font-size:clamp(33px,9vw,50px)}
 </div>
 
 <div class="hero-stamp-wrap reveal visible">
-<div class="hero-img-card"><img src="tandan.jpg" alt="Kebun sawit"><span>TBS• Sekernan<br>Muaro Jambi</span></div>
+<div class="hero-img-card"><img src="tandan.jpg" alt="Kebun sawit"><span>TBS • Mestong<br>Muaro Jambi</span></div>
 <div class="stamp-shift">
-<div class="stamp-float">RATA-RATA WILAYAH</div>
+<div class="stamp-float">HARGA RATA-RATA</div>
 <aside class="hero-stamp" id="heroStamp" aria-label="Ringkasan harga rata-rata" style="transform: rotate(1.2deg);">
 <div class="stamp-shine"></div>
 <div class="stamp-slides" id="stampSlides">
 <div class="stamp-slide" data-slide="0">
 <div class="stamp-top"><span>SUMATERA</span><span class="stamp-date-el">21.09.2026</span></div>
 <div class="stamp-price"><small>RP</small> <span id="stampNumberSumatera">3.119</span> <small>/ KG</small></div>
-<div class="stamp-change">DATA DARI <span id="stampKecSumatera">359</span> KECAMATAN</div>
+<div class="stamp-change"><span id="stampKecSumatera">285</span> KECAMATAN</div>
 </div>
 <div class="stamp-slide active" data-slide="1">
 <div class="stamp-top"><span>KALIMANTAN</span><span class="stamp-date-el">21.09.2026</span></div>
 <div class="stamp-price"><small>RP</small> <span id="stampNumberKalimantan">2.986</span> <small>/ KG</small></div>
-<div class="stamp-change">DATA DARI <span id="stampKecKalimantan">33</span> KECAMATAN</div>
+<div class="stamp-change"><span id="stampKecKalimantan">33</span> KECAMATAN</div>
 </div>
 <div class="stamp-slide" data-slide="2">
 <div class="stamp-top"><span>SULAWESI</span><span class="stamp-date-el">21.09.2026</span></div>
 <div class="stamp-price"><small>RP</small><span id="stampNumberSulawesi">2.884</span><small>/KG</small></div>
-<div class="stamp-change">DATA DARI<span id="stampKecSulawesi">20</span>KECAMATAN</div>
+<div class="stamp-change"><span id="stampKecSulawesi">20</span>KECAMATAN</div>
 </div>
 <div class="stamp-slide" data-slide="3">
 <div class="stamp-top"><span>PAPUA</span><span class="stamp-date-el">21.09.2026</span></div>
 <div class="stamp-price"><small>RP</small><span id="stampNumberPapua">2.733</span><small>/KG</small></div>
-<div class="stamp-change">DATA DARI<span id="stampKecPapua">22</span>KECAMATAN</div>
+<div class="stamp-change"><span id="stampKecPapua">22</span>KECAMATAN</div>
 </div>
 </div>
 <div class="stamp-dots" id="stampDots"><span class="dot"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
@@ -409,13 +408,13 @@ h1{font-size:clamp(33px,9vw,50px)}
 <div class="field">
 <label for="regency"></label>
 <div class="select-wrap">
-<select id="regency" aria-label="Pilih kabupaten atau kota" data-gtm-form-interact-field-id="1"><option value="">Pilih kabupaten/kota</option><option value="Kabupaten Banggai">Kabupaten Banggai</option><option value="Kabupaten Donggala">Kabupaten Donggala</option><option value="Kabupaten Morowali">Kabupaten Morowali</option><option value="Kabupaten Parigi Moutong">Kabupaten Parigi Moutong</option><option value="Kabupaten Tojo Una-Una">Kabupaten Tojo Una-Una</option></select>
+<select id="regency" aria-label="Pilih kabupaten atau kota" data-gtm-form-interact-field-id="1"><option value="">Pilih kabupaten/kota</option></select>
 </div>
 </div>
 <div class="field">
 <label for="district"></label>
 <div class="select-wrap">
-<select id="district" aria-label="Pilih kecamatan" data-gtm-form-interact-field-id="2"><option value="">Pilih kecamatan</option><option value="Banawa">Kec. Banawa</option></select>
+<select id="district" aria-label="Pilih kecamatan" data-gtm-form-interact-field-id="2"><option value="">Pilih kecamatan</option></select>
 </div>
 </div>
 <button type="submit" class="search-btn">CEK HARGA</button>
@@ -434,40 +433,39 @@ h1{font-size:clamp(33px,9vw,50px)}
 <div class="price-layout">
 <section class="price-board reveal visible flash">
 <div class="board-top">
-<div class="board-location"><div class="board-location-text"><strong id="boardDistrict">KEC. BANAWA</strong><small><span id="boardRegency">KAB. KABUPATEN DONGGALA</span> • <span id="boardProvince">SULAWESI TENGAH</span><em id="boardCode">· PLW</em></small></div></div>
+<div class="board-location"><div class="board-location-text"><strong id="boardDistrict">KECAMATAN</strong><small><span id="boardRegency">KABUPATEN/KOTA</span> • <span id="boardProvince">PROVINSI</span><em id="boardCode"></em></small></div></div>
 <div class="updated" id="boardUpdated">MEMUAT DATA...</div>
 </div>
 <table class="price-table">
 <thead><tr><th>Usia Tanaman</th><th>Harga / Kg</th><th>Status Data</th></tr></thead>
-<tbody id="priceBody"><tr style="opacity: 1; transform: none; transition: 0.4s;"><td><span class="age-badge">3</span>3 Tahun</td><td data-price="2527">Rp 2.527</td><td><span class="neutral">Survei</span></td></tr><tr style="opacity: 1; transform: none; transition: 0.4s;"><td><span class="age-badge">4</span>4 Tahun</td><td data-price="2644">Rp 2.644</td><td><span class="neutral">Estimasi</span></td></tr><tr class="best-row" style="opacity: 1; transform: none; transition: 0.4s;"><td><span class="age-badge">★</span>10–20 Tahun</td><td data-price="2938">Rp 2.938</td><td><span class="rise">Terverifikasi</span></td></tr><tr style="opacity: 1; transform: none; transition: 0.4s;"><td><span class="age-badge">21+</span>21 Tahun ke atas</td><td data-price="2850">Rp 2.850</td><td><span class="neutral">Estimasi</span></td></tr></tbody>
+<tbody id="priceBody"><tr><td colspan="3" style="text-align:center;opacity:.65;padding:28px 12px">Pilih provinsi, kabupaten/kota, dan kecamatan, lalu klik CEK HARGA.</td></tr></tbody>
 </table>
-<div class="board-footer"><span>BANTU KAMI DENGAN LAPORAN HARGA TBS SWADAYA TERBARU</span><a class="board-report-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdaSQlMi4PfVL7P0YOUx0GTjCRuZRtcQkw79fkKj1ogXmw0Lw/viewform?usp=header" target="_blank" rel="noopener">+ Setor harga di wilayah Anda</a></div>
+<div class="board-footer"><span>INFORMASI DARI INTERNET &amp; PETANI</span><a class="board-report-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdaSQlMi4PfVL7P0YOUx0GTjCRuZRtcQkw79fkKj1ogXmw0Lw/viewform?usp=header" target="_blank" rel="noopener">+ Setor harga di wilayah Anda</a></div>
 </section>
 <aside class="side-stack">
 <div class="info-card dark reveal visible">
 
-<div class="card-label">Sumber Data</div>
-<div class="trend-value" id="trendValue" style="font-size:18px;line-height:1.25;">Acuan Disbunak Sulteng periode Agustus 2026 (Rp3.416,64/Kg, umur 10-20th, ditetapkan 13 Agu 2026), margin pengepul ~14%</div>
-<p id="trendNote">Kec. Banawa, Kabupaten Donggala • Data 13 Agu 2026</p>
+<div class="card-label">Keterangan</div>
+<div class="trend-value" id="trendValue" style="font-size:18px;line-height:1.25;">Wilayah</div>
+<p id="trendNote"></p>
 <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div>
 </div>
 <div class="info-card green reveal visible">
 <div class="card-label">Kondisi Jarak &amp; Medan Ke Ramp/PKS</div>
-<div class="trend-value" id="jarakValue" style="font-size:16px;line-height:1.3;letter-spacing:-.02em;">Gambaran Jarak dan medan</div>
-<p style="opacity:.82">Geografis suatu wilayah mempengaruhi aksesibilitas dan biaya transportasi TBS ke PKS</p>
-<div class="trend-value" id="jarakValue" style="font-color:#FFFFFF;font-size:16px;line-height:1.3;letter-spacing:-.02em;"></div>
+<div class="trend-value" id="jarakValue" style="font-size:16px;line-height:1.3;letter-spacing:-.02em;">Dikabupaten/kota</div>
+<p style="opacity:.82"></p>
 </div>
 </aside>
 </div>
 <section class="guide reveal visible" id="panduan">
 <div class="guide-head">
 <div class="number">!</div>
-<div><h3>GOTONG ROYONG</h3><p>Makin banyak laporan, makin akurat</p></div>
+<div><h3>Harga yang baik dimulai dari informasi yang baik</h3></div>
 </div>
 <div class="steps">
-<article class="step"><div class="step-index">Kenapa Harus Lapor?</div><strong>Dari petani, untuk petani</strong><p>"Ceritakan harga di kebun Anda": Harga yang Anda terima hari ini sangat berarti bagi petani lain di sekitar Anda</p><div class="step-num">01</div></article>
-<article class="step"><div class="step-index">Harga Transparan</div><strong>Tak lagi menebak-nebak harga</strong><p>Setiap laporan membantu memperbarui dan mencocokkan harga di tingkat kecamatan agar makin sesuai kondisi lapangan</p><div class="step-num">02</div></article>
-<article class="step"><div class="step-index">Manfaat Bersama</div><strong>Bekal keputusan mantap</strong><p>Makin banyak petani melapor, makin lengkap dan terbarui data di tingkat kecamatan</p><div class="step-num">03</div></article>
+<article class="step"><div class="step-index">PILIH WILAYAH</div><strong>Temukan harga lokal</strong><p>Pilih provinsi, kabupaten/kota, lalu kecamatan Anda untuk melihat acuan harga TBS terbaru di daerah kebun</p><div class="step-num">01</div></article>
+<article class="step"><div class="step-index">CEK USIA POHON</div><strong>Sesuaikan dengan kebun</strong><p>Harga TBS berbeda berdasarkan usia tanaman. Gunakan kelompok usia yang tepat</p><div class="step-num">02</div></article>
+<article class="step"><div class="step-index">BANDINGKAN &amp; JUAL</div><strong>Bekal keputusan mantap</strong><p>Acuan informasi ini sebagai bekal saat bernegosiasi dengan pengepul</p><div class="step-num">03</div></article>
 </div>
 </section>
 </main>
@@ -490,7 +488,7 @@ Informasi disajikan berdasarkan wilayah kecamatan, sehingga petani dapat mengeta
 </div>
 <div class="copyright"><span>© 2026 GUNUNGKEBUN.COM — All Right Reserved | Aditya Subarna-Creator </span><span>Email team@gunungkebun.com</span><span>● Active</span></div>
 </footer>
-<div class="toast" id="toast"><span class="toast-dot" style="background: rgb(217, 255, 61); color: rgb(14, 33, 23);">✓</span><span id="toastText">Menampilkan harga Kec. Banawa, Kabupaten Donggala.</span></div>
+<div class="toast" id="toast"><span class="toast-dot" style="background: rgb(217, 255, 61); color: rgb(14, 33, 23);">✓</span><span id="toastText"></span></div>
 <!-- SETOR HARGA JUAL TBS TERKINI: ke Form pelaporan harga -->
 <a class="report-fab compact" id="reportFab" href="https://docs.google.com/forms/d/e/1FAIpQLSdaSQlMi4PfVL7P0YOUx0GTjCRuZRtcQkw79fkKj1ogXmw0Lw/viewform?usp=header" target="_blank" rel="noopener" aria-label="Setor harga TBS terkini">
   <span class="fab-ico">+</span>
@@ -529,10 +527,10 @@ const trendValue=document.getElementById('trendValue');
 const trendNote=document.getElementById('trendNote');
 const siteHeader=document.getElementById('siteHeader');
 
-/* ======
+/* ========
    RENDER TICKER OTOMATIS
-   TICKER_PROVINCES:
-========= */
+   TICKER_PROVINCES
+====== */
 const TICKER_PROVINCES=["Aceh","Riau","Sumatera Utara","Sumatera Barat","Jambi","Bengkulu","Lampung","Kepulauan Bangka Belitung","Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara",
                           "Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Papua Barat"
 ];
@@ -564,9 +562,7 @@ function renderTicker(){
 
 const URL_API_HARGA="https://script.google.com/macros/s/AKfycby7Neph2HMxlhaapyN42YR1pvqowOJ2zbQYBgPSgyM0ClF48KDniDRdolvHHeLP2U80/exec";
 
-/* provinsi di daftar ini yang ditampilkan di dropdown,
-   (mis. Kepulauan Bangka Belitung).
-  . */
+/* provinsi di daftar ini yang ditampilkan di dropdown */
 const ALLOWED_PROVINCES=["Aceh","Sumatera Utara","Sumatera Barat","Riau","Jambi","Sumatera Selatan","Kepulauan Bangka Belitung","Bengkulu","Lampung","Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara","Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Papua Barat"];
 const KALIMANTAN_PROVINCES=["Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara"];
 const SULAWESI_PROVINCES=["Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo"];
@@ -574,9 +570,9 @@ const PAPUA_PROVINCES=["Papua Barat"];
 
 const PROV_CODE={"Aceh":"BTJ","Sumatera Utara":"KNO","Sumatera Barat":"PDG","Riau":"PKU","Jambi":"DJB","Sumatera Selatan":"PLM","Bengkulu":"BKS","Lampung":"TKG","Kepulauan Bangka Belitung":"PGK","Kalimantan Barat":"PNK","Kalimantan Tengah":"PKY","Kalimantan Timur":"BPN","Kalimantan Selatan":"BDJ","Kalimantan Utara":"TRK","Sulawesi Barat":"MJU","Sulawesi Tengah":"PLW","Sulawesi Selatan":"UPG","Sulawesi Tenggara":"KDI","Gorontalo":"GTO","Papua Barat":"MKW",};
 
-/* ======
+/* ========
    ESTIMASI HARGA PER USIA TANAMAN
-=======*/
+======== */
 const AGES=[["3","3 Tahun",0.86,true],["4","4 Tahun",0.90,true],["★","10–20 Tahun",1.00,false],["21+","21 Tahun ke atas",0.97,true]];
 
 let hargaTBS={};
@@ -738,8 +734,7 @@ renderBoard(province.value,regency.value,district.value,true);
 showToast('Menampilkan harga Kec. '+district.value+', '+regency.value+'.',true);
 });
 /* ======
-   KONDISI JARAK & MEDAN KE RAMP/PKS  (data dari tab 'Kategori_Jarak')
-  .
+   KONDISI JARAK & MEDAN KE RAMP/PKS
 ========= */
 const URL_KATEGORI_JARAK="https://docs.google.com/spreadsheets/d/e/2PACX-1vSewWgXLwCcRlq9HclGwZqYw2hqfTkAaTRicApDEWdiRrdZVRCPyMbHTmQYPOS91pb1ZeevyJJ4JAbT/pub?gid=779572419&single=true&output=csv";
 const jarakValue=document.getElementById('jarakValue');
@@ -773,7 +768,7 @@ function parseCSV(text){
 }
 function updateJarak(){
   if(!jarakValue)return;
-  if(!regency.value){jarakValue.textContent="Gambaran Jarak dan medan";return;}
+  if(!regency.value){jarakValue.textContent="Dikabupaten/kota";return;}
   if(kategoriStatus==="memuat"){jarakValue.textContent="Memuat data kondisi jarak...";return;}
   if(kategoriStatus==="gagal"){jarakValue.textContent="Data kondisi jarak belum bisa dimuat. Coba muat ulang halaman.";return;}
   const kp=normKey(province.value);
@@ -883,7 +878,7 @@ function updateStampAverage(){
   animateCount(document.getElementById('stampNumberPapua'),papua.avg*0.9,papua.avg,"");
   document.getElementById('stampKecPapua').textContent=papua.count;
 }
-/* Kartu hero bergantian otomatis antara Sumatera & Kalimantan & sulawesi & Papua tiap beberapa detik */
+/* Kartu hero  */
 let stampSlideIdx=0;
 const STAMP_REGION_LABELS=["SUMATERA","KALIMANTAN","SULAWESI","PAPUA",];
 function showStampSlide(i){
@@ -911,6 +906,7 @@ function startStampCarousel(){
     updateStampAverage();
     startStampCarousel();
     renderTicker();
+    boardUpdated.textContent=(statusDataHarga==="gagal")?"DATA GAGAL DIMUAT":"DATA TERBARU";
     return;
     const provs=ALLOWED_PROVINCES.filter(p=>hargaTBS[p]);
     const firstProv=provs.find(p=>Object.keys(hargaTBS[p]).length)||provs[0];
