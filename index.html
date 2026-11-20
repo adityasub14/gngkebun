@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="id"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>GunungKebun - Lihat dan Cek Harga Jual TBS SWADAYA INDONESIA Hari ini</title>
+<title>GunungKebun - Lihat Harga Jual TBS</title>
 <meta content="Pantau harga TBS kelapa sawit terbaru hingga level kecamatan di Sumatera." name="description">
 <link href="logoNEWgngkebun.png" rel="icon" type="image/png">
 <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -28,7 +28,7 @@ function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', 
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip;background:var(--bg)}
-html::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(247,246,238,.88) 0%,rgba(239,233,216,.9) 55%,rgba(230,222,201,.95) 100%),radial-gradient(circle at 50% 25%,rgba(255,255,255,.35),transparent 75%),url("Harvest.png") center top/cover no-repeat}
+html::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(247,246,238,.88) 0%,rgba(239,233,216,.9) 55%,rgba(230,222,201,.95) 100%),radial-gradient(circle at 50% 25%,rgba(255,255,255,.35),transparent 75%),url("https://lh3.googleusercontent.com/aida-public/AB6AXuBV0iySi_P63lrvC5uOOSe_gDqr7o5i3YDXsFsjFdqEwi1OLmoC_35AaMUJvk6ZFtOWOX1AVmrThEPaHlbLELRSk8QuR25MdcHTbPIPbmoGrq3c639ro3zEm4jQFl-XVrwFt34wM-4YJNNTIPbIcezRjkvwC5e7i_WzDZDK_D0kbEFL_lNRk3fWXU7uAvU8BD88jsAkCWxQoWwDKuZK3MToTXvZOa_NUluKqVmyEpuxFYXe53ANg0fZ0iferHizvYQs3g") center top/cover no-repeat}
 body{margin:0;color:var(--ink);background:transparent;font-family:var(--font-sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(900px 520px at 12% -6%, rgba(217,255,61,.42), transparent 60%),radial-gradient(820px 620px at 96% 12%, rgba(20,153,69,.14), transparent 60%),radial-gradient(760px 620px at 50% 108%, rgba(255,92,40,.09), transparent 60%)}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.55;background-image:linear-gradient(rgba(20,32,26,.05) 1px, transparent 1px),linear-gradient(90deg, rgba(20,32,26,.05) 1px, transparent 1px);background-size:46px 46px;mask-image:radial-gradient(920px 520px at 50% 0%, black 28%, transparent 76%)}
@@ -41,21 +41,17 @@ button{cursor:pointer}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:#B9B39C;border-radius:99px;border:2px solid var(--bg)}
 ::-webkit-scrollbar-thumb:hover{background:var(--forest)}
-/* SETOR HARGA (FAB) */
 .report-fab{position:fixed;right:20px;bottom:20px;z-index:35;display:flex;align-items:center;gap:9px;padding:12px 18px 12px 12px;background:var(--forest);color:var(--paper);border:1px solid rgba(217,255,61,.3);border-radius:999px;font-family:var(--font-sans);font-weight:700;font-size:12.5px;box-shadow:var(--sh-md);transition:.3s cubic-bezier(.4,0,.2,1)}
 .report-fab:hover{background:var(--forest-2);transform:translateY(-3px);box-shadow:var(--sh-lg)}
 .report-fab .fab-ico{width:26px;height:26px;border-radius:50%;background:var(--lime);color:var(--forest);display:grid;place-items:center;font-size:13px;font-weight:800;flex-shrink:0;transition:.3s}
 .report-fab span.fab-label{white-space:nowrap;overflow:hidden;max-width:200px;opacity:1;transition:.25s ease,max-width .3s ease;display:inline-block}
-/* Mode ringkas: dipicu JS saat footer terlihat, supaya tidak menutupi footer */
 .report-fab.compact{padding:0;width:46px;height:46px;justify-content:center;gap:0;bottom:16px;right:16px}
 .report-fab.compact .fab-label{max-width:0;opacity:0;margin:0;padding:0}
 .report-fab.compact .fab-ico{width:100%;height:100%;font-size:18px}
 @media (max-width:640px){.report-fab{padding:11px 16px 11px 11px;font-size:11.5px}.report-fab span.fab-sub{display:none}.report-fab.compact{width:42px;height:42px}}
-/* Tombol setor harga di dalam board */
 .board-footer{flex-wrap:wrap;gap:10px}
 .board-footer .board-report-link{display:inline-flex;align-items:center;gap:6px;background:var(--lime-soft);color:var(--forest)!important;border:1px solid var(--lime-deep);padding:7px 13px;border-radius:999px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:.2s}
 .board-footer .board-report-link:hover{background:var(--lime);transform:translateY(-1px)}
-/* TICKER */
 .ticker{min-height:36px;background:var(--forest-3);color:#7cff11;display:flex;align-items:center;overflow:hidden;position:relative;z-index:30;border-bottom:1px solid rgb(241, 241, 237);font-family:var(--font-mono);font-size:13px;letter-spacing:.02em;white-space:nowrap}
 .ticker::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg, var(--forest-3) 0%, transparent 8%, transparent 92%, var(--forest-3) 100%)}
 .ticker-track{display:flex;width:max-content;animation:ticker 38s linear infinite}
@@ -65,7 +61,6 @@ button{cursor:pointer}
 .ticker .up{color:var(--lime);font-weight:700;font-style:normal;background:rgba(217,255,61,.12);padding:2px 7px;border-radius:999px;border:1px solid rgba(217,255,61,.25);font-size:10px}
 .ticker .sep{opacity:.2}
 @keyframes ticker{to{transform:translateX(-50%)}}
-/* HEADER */
 header{background:rgba(243,239,225,.84);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(20,32,26,.1);position:sticky;top:0;z-index:20;transition:.3s}
 header.scrolled{box-shadow:0 12px 32px -16px rgba(14,33,23,.25);background:rgba(243,239,225,.94)}
 .scroll-progress{position:absolute;top:0;left:0;height:2.5px;width:0;background:linear-gradient(90deg,var(--green),var(--lime-deep),var(--lime));z-index:21}
@@ -85,7 +80,6 @@ header.scrolled{box-shadow:0 12px 32px -16px rgba(14,33,23,.25);background:rgba(
 .nav-cta:hover i{transform:rotate(45deg)}
 .menu-toggle{display:none;width:40px;height:40px;border:1px solid var(--line);background:var(--paper);font-size:18px;font-weight:800;border-radius:12px;line-height:1}
 .mobile-links{display:none}
-/* HERO */
 .hero{max-width:1200px;margin:auto;padding:58px 28px 30px;display:grid;grid-template-columns:1.12fr .88fr;gap:44px;align-items:center;position:relative;z-index:1}
 .hero-deco{position:absolute;inset:0;pointer-events:none;overflow:visible}
 .hero-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.7}
@@ -109,7 +103,6 @@ h1 .highlight::after{content:"";position:absolute;height:13px;background:linear-
 .hero-avatars span:first-child{margin-left:0}
 .hero-badges{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
 .hero-badges span{font:600 9px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.7);border:1px solid var(--line);padding:6px 10px;border-radius:99px;color:var(--forest);backdrop-filter:blur(6px)}
-/* STAMP */
 .hero-stamp-wrap{justify-self:end;position:relative;width:322px;max-width:100%;margin-right:60px}
 .stamp-shift{position:relative;transform:translate(-135px, 15px)}
 .hero-stamp{width:100%;background:linear-gradient(165deg, #0F261B 0%, #163927 55%, #0D1F15 100%);border:1px solid rgba(217,255,61,.26);border-radius:var(--r-l);padding:19px 19px 17px;color:#F3F7E8;position:relative;overflow:hidden;box-shadow:var(--sh-lg), inset 0 1px 0 rgba(255,255,255,.14);transform:rotate(1.2deg);transition:.4s;z-index:2}
@@ -135,7 +128,6 @@ h1 .highlight::after{content:"";position:absolute;height:13px;background:linear-
 .stamp-spark svg{width:100%;height:44px;display:block}
 .stamp-spark div{display:flex;justify-content:space-between;font:500 8.5px var(--font-mono);opacity:.6;margin-top:4px;letter-spacing:.06em}
 .stamp-shadow{position:absolute;inset:12px -10px -10px 10px;background:linear-gradient(180deg,rgba(14,33,23,.18),transparent);border-radius:var(--r-l);z-index:1;filter:blur(2px)}
-/* SEARCH */
 .search-section{background:transparent;border:0;position:relative;z-index:2;padding:10px 28px 0}
 .search-inner{max-width:1200px;margin:auto;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px 22px 16px;box-shadow:var(--sh-md);position:relative;overflow:hidden}
 .search-inner::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg, var(--lime-deep), var(--green))}
@@ -169,14 +161,12 @@ select:disabled{opacity:.55;cursor:not-allowed;background:#EEEAD8}
 .search-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font:500 12px var(--font-mono);letter-spacing:.04em;color:var(--muted);flex-wrap:wrap}
 .search-foot strong{color:var(--green-deep)}
 .search-foot .hint-dot{width:6px;height:6px;border-radius:50%;background:var(--lime-deep);display:inline-block;margin-right:7px;box-shadow:0 0 0 4px rgba(185,230,0,.18)}
-/* MAIN */
 .main{max-width:1200px;padding:44px 28px 64px;margin:auto;position:relative;z-index:1}
 .section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px;gap:20px}
 h2{margin:0;font:600 clamp(30px,3.6vw,44px)/0.95 var(--font-display);letter-spacing:-.035em}
 h2 span{font-style:italic;background:linear-gradient(transparent 62%, var(--lime) 62%, var(--lime) 92%, transparent 92%);padding:0 4px}
 .section-header p{margin:0;font:500 10px var(--font-mono);color:var(--muted);text-align:right;line-height:1.6;letter-spacing:.06em;text-transform:uppercase}
 .section-header p strong{color:var(--forest);background:var(--paper);border:1px solid var(--line);padding:2px 8px;border-radius:999px}
-/* PRICE LAYOUT */
 .price-layout{display:grid;grid-template-columns:1.42fr .88fr;gap:16px;align-items:start}
 .price-board{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh-md);overflow:hidden}
 .board-top{padding:13px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;background:linear-gradient(180deg,#FAF7EC,#F5F1E2);border-bottom:1px solid var(--line-soft)}
@@ -224,7 +214,6 @@ h2 span{font-style:italic;background:linear-gradient(transparent 62%, var(--lime
 .info-card:hover .mini-bars i{transform:scaleY(1.05)}
 .card-icon{position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-size:14px;background:rgba(14,33,23,.08);border:1px solid rgba(14,33,23,.1)}
 .info-card.dark .card-icon{background:rgba(217,255,61,.12);border-color:rgba(217,255,61,.2)}
-/* GUIDE */
 .guide{margin-top:44px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--sh-sm);position:relative;overflow:hidden}
 .guide::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg, var(--green), var(--lime-deep), var(--orange))}
 .guide-head{display:flex;align-items:center;gap:17px;margin-bottom:20px}
@@ -240,7 +229,6 @@ h2 span{font-style:italic;background:linear-gradient(transparent 62%, var(--lime
 .step strong{display:block;margin:14px 0 6px;font-size:13px;font-weight:700;letter-spacing:-.01em}
 .step p{margin:0;font-size:11.5px;line-height:1.6;color:#5E665E}
 .step-num{position:absolute;bottom:-8px;right:10px;font:700 52px/1 var(--font-display);color:rgba(20,32,26,.05);font-style:italic}
-/* FOOTER */
 footer{background:var(--forest-3);color:#D6DDD1;border-top:1px solid rgba(217,255,61,.15);position:relative;overflow:hidden}
 footer::before{content:"GUNUNGKEBUN";position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font:700 92px/1 var(--font-grot);letter-spacing:-.06em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none}
 .footer-inner{max-width:1200px;margin:auto;padding:38px 28px 22px;display:flex;justify-content:space-between;gap:32px;position:relative;z-index:1}
@@ -252,11 +240,9 @@ footer::before{content:"GUNUNGKEBUN";position:absolute;bottom:-18px;left:50%;tra
 .footer-links a:hover{color:var(--forest);background:var(--lime);border-color:var(--lime)}
 .copyright{max-width:300px;margin:auto;border-top:1px solid rgba(255,255,255,.08);padding:15px 28px;color:#7A857B;font:500 9px var(--font-mono);letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
 .copyright span:last-child{color:var(--lime);opacity:.7}
-/* TOAST */
 .toast{position:fixed;z-index:50;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--forest);border:1px solid rgba(217,255,61,.3);box-shadow:var(--sh-lg);padding:11px 18px 11px 11px;color:#F3F7E8;font-size:11.5px;font-weight:600;border-radius:999px;opacity:0;transition:.35s cubic-bezier(.2,.9,.3,1.2);white-space:nowrap;display:flex;align-items:center;gap:10px;max-width:92vw;overflow:hidden;text-overflow:ellipsis}
 .toast.show{transform:translate(-50%,0);opacity:1}
 .toast-dot{width:26px;height:26px;border-radius:50%;background:var(--lime);color:var(--forest);display:grid;place-items:center;font-size:13px;font-weight:800;flex-shrink:0}
-/* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.3,1)}
 .reveal.visible{opacity:1;transform:none}
 .flash{animation:flash 1s}
@@ -307,14 +293,6 @@ h1{font-size:clamp(33px,9vw,50px)}
 
 .side-stack{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 @media (max-width:640px){.side-stack{grid-template-columns:1fr}}
-/* ===== FIX: dua bingkai foto hero sejajar berdampingan di layar HP/tablet ===== */
-@media (max-width:1080px){
-.hero-stamp-wrap{margin-top:128px}
-.hero-stamp-wrap .hero-img-card{top:-124px!important;right:auto!important;width:calc(50% - 8px);max-width:150px}
-.hero-stamp-wrap .hero-img-card:first-of-type{left:0;transform:rotate(-3deg)!important;z-index:3}
-.hero-stamp-wrap .hero-img-card ~ .hero-img-card{left:calc(50% + 4px);transform:rotate(3deg)!important;z-index:3}
-}
-/* ===== FIX: form pencarian (dropdown) — dipindah dari inline style agar media query bisa bekerja ===== */
 .search-grid{display:flex;justify-content:center;align-items:center;gap:20px;width:100%}
 .search-form{display:grid;grid-template-columns:1fr 1fr 1fr 128px;gap:10px;width:100%;max-width:960px;margin:0 auto;align-items:end}
 .field,.select-wrap{min-width:0}
@@ -327,7 +305,7 @@ select{min-width:0;text-overflow:ellipsis;white-space:nowrap}
 .search-inner{padding:16px 14px}
 .search-form{grid-template-columns:1fr;gap:12px;max-width:none}
 .search-btn{grid-column:auto;min-width:0;width:100%;height:48px;font-size:12px}
-select{height:48px;font-size:16px} /* 16px: mencegah iOS zoom otomatis saat dropdown dibuka */
+select{height:48px;font-size:16px}
 }
 </style>
 </head><body><svg aria-hidden="true" class="inline-defs-container" style="position:absolute;width:0;height:0;overflow:hidden"></svg><style>.ticker{color:#ffffff !important}.ticker span{color:#ffffff}.ticker b{color:#7cff11 !important}.ticker .sep{color:rgba(255,255,255,0.4) !important}</style>
@@ -342,7 +320,7 @@ select{height:48px;font-size:16px} /* 16px: mencegah iOS zoom otomatis saat drop
 <div class="scroll-progress" id="scrollProgress" style="width: 0%;"></div>
 <nav class="nav" style="height: 76px;">
 <a aria-label="GunungKebun beranda" class="logo" href="#">
-<img alt="Logo GunungKebun" class="logo-mark-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUK36415VxvKq0IBz1w0XvjWIlshWucUwWXVGZ6orgRdNMUuknl37B7X-yqxLnCZMI6aBeD-v3Cas-HkQXXMftUCRqcXDoB4v_GKSPDM5NaQMHyjK_iquZauKex82UHE1qnWof18OAuFLLSOiv_08fQQ18Xnur9cz9LsLXmA-pLfLZG6HUQVuKzCn6esuoUG7v0_xYixlTa_mQxPLuzVO1QSEaODnSOJ6msUalKd68G8qVMjC_Aae3V9vyEUcSjkRhqw" style="width: 58px; height: 58px; object-fit: contain; border-radius: 12px;">
+<img alt="Logo GunungKebun" class="logo-mark-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" src="logoNEWgngkebun.png" style="width: 58px; height: 58px; object-fit: contain; border-radius: 12px;">
 <span class="logo-mark" style="display:none;">◈</span>
   GUNUNG<em>KEBUN</em>
 </a>
@@ -439,7 +417,7 @@ select{height:48px;font-size:16px} /* 16px: mencegah iOS zoom otomatis saat drop
 </div>
 <table class="price-table">
 <thead><tr><th class="">Usia Tanaman</th><th class="">Harga / Kg</th><th class="">Status Data</th></tr></thead>
-<tbody id="priceBody"><tr><td class="" colspan="3" style="text-align:center;opacity:.65;padding:28px 12px"></td></tr></tbody>
+<tbody id="priceBody"><tr><td class="" colspan="3" style="text-align:center;opacity:.65;padding:28px 12px">Pilih provinsi, kabupaten/kota, dan kecamatan, lalu klik CEK.</td></tr></tbody>
 </table>
 <div class="board-footer"><span class="">INFORMASI DARI INTERNET &amp; PETANI</span><a class="board-report-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdaSQlMi4PfVL7P0YOUx0GTjCRuZRtcQkw79fkKj1ogXmw0Lw/viewform?usp=header" rel="noopener" target="_blank">+ Setor harga di wilayah Anda</a></div>
 </section>
@@ -451,9 +429,9 @@ select{height:48px;font-size:16px} /* 16px: mencegah iOS zoom otomatis saat drop
 <div class="" style="position: absolute; bottom: 18px; right: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(rgba(217, 255, 61, 0.4) 0px 0px 8px); z-index: 1;"><svg fill="none" height="36" stroke="var(--lime)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="36" class=""><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6 6h10"></path><path d="M6 10h10"></path><path d="M6 14h6"></path></svg></div>
 </div>
 <div class="info-card green reveal visible" style="background: linear-gradient(155deg, rgb(35, 93, 45) 0%, rgb(18, 51, 24) 100%); border-color: rgba(217, 255, 61, 0.25); color: rgb(241, 246, 232); box-shadow: var(--sh-sm);"><style class="">.info-card.green::after { display: none !important; } .info-card.green .card-label { color: #d9ff3d !important; opacity: 0.9 !important; } .info-card.green .trend-value { color: #ffffff !important; } .info-card.green p { color: #e2ecd9 !important; }</style>
-<div class="card-label" data-stitch-orig-opacity="1" style="color: rgb(255, 255, 255); text-align: center; justify-content: center; width: 100%;">Kondisi Jalan Ke Ramp/PKS</div>
+<div class="card-label" data-stitch-orig-opacity="1" style="color: rgb(255, 255, 255); text-align: center; justify-content: center; width: 100%;">Kondisi Jarak &amp; Medan Ke Ramp/PKS</div>
 
-<div class="trend-value" id="jarakValue" style="font-size: 18px; line-height: 1.25; color: rgb(255, 255, 255); text-align: center; margin: 14px 0 44px;"></div>
+<div class="trend-value" id="jarakValue" style="font-size: 18px; line-height: 1.25; color: rgb(255, 255, 255); text-align: center; margin: 14px 0 44px;">Pilih wilayah lalu klik CEK</div>
 <style id="green-card-custom-style" class="">.info-card.green .card-label::before { display: none !important; content: none !important; } .info-card.green .card-label { color: #ffffff !important; opacity: 1 !important; justify-content: center !important; text-align: center !important; display: flex !important; width: 100% !important; }</style><div style="position: absolute; bottom: 18px; right: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(rgba(217, 255, 61, 0.4) 0px 0px 8px); z-index: 1;" class=""><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="var(--lime)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class=""><path d="M4 19L9 5"></path><path d="M20 19L15 5"></path><line x1="12" y1="6" x2="12" y2="8" stroke-dasharray="1 1"></line><line x1="12" y1="11" x2="12" y2="13" stroke-dasharray="1 1"></line><line x1="12" y1="16" x2="12" y2="18" stroke-dasharray="1 1"></line><path d="M2 20c4-1 6-1 10-1s6 0 10 1"></path></svg></div></div>
 <div class="info-card reveal visible" style="background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 20px; box-shadow: var(--sh-sm); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 14px; grid-column: 1 / -1; font-family: var(--font-grot);"><div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 1px dashed var(--line); padding-bottom: 10px;" class=""><div style="display: flex; align-items: center;"><div style="font-family: var(--font-grot); font-size: 16px; font-weight: 700; color: var(--forest); letter-spacing: -0.01em;" class="">Peringkat 5 Besar TBS Tertinggi</div></div><div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; flex-wrap: wrap;"><span class="">Harga TBS Setiap kecamatan berbeda-beda</span><span class="">•</span><span class=""><strong style="color: var(--green-deep);"><span data-count="kecamatan" class="">359</span></strong> KECAMATAN TERDATA</span></div></div><div style="display: flex; flex-direction: column; gap: 10px;"><div style="display: flex; flex-direction: column; gap: 5px; background: rgba(217, 255, 61, 0.12); border: 1px solid rgba(217, 255, 61, 0.35); border-radius: 10px; padding: 9px 12px;"><div style="display: flex; justify-content: space-between; align-items: center;"><div style="display: flex; align-items: center; gap: 8px;"><span style="width: 22px; height: 22px; border-radius: 6px; background: #FFD700; color: #1B2B11; font-family: var(--font-mono); font-weight: 800; font-size: 11px; display: grid; place-items: center; box-shadow: 0 2px 6px rgba(255,215,0,0.4);" class="">1</span><strong style="font-size: 13px; color: var(--forest); font-family: var(--font-grot); font-weight: 600;">Sumatera Utara</strong></div><span style="font-family: var(--font-grot); font-weight: 700; font-size: 14px; color: var(--forest);" class="">Rp 3.653<small style="font-size: 10px; font-weight: 500; font-family: var(--font-mono); color: var(--muted);">/kg</small></span></div><div style="width: 100%; height: 5px; background: rgba(20, 32, 26, 0.08); border-radius: 999px; overflow: hidden;"><div style="width: 100%; height: 100%; background: linear-gradient(90deg, var(--lime), #149945); border-radius: 999px;"></div></div></div><div style="display: flex; flex-direction: column; gap: 5px; background: #FAF7EC; border: 1px solid var(--line-soft); border-radius: 10px; padding: 9px 12px;"><div style="display: flex; justify-content: space-between; align-items: center;"><div style="display: flex; align-items: center; gap: 8px;"><span style="width: 22px; height: 22px; border-radius: 6px; background: #E2E8F0; color: #334155; font-family: var(--font-mono); font-weight: 800; font-size: 11px; display: grid; place-items: center;" class="">2</span><strong style="font-size: 13px; color: var(--forest); font-family: var(--font-grot); font-weight: 600;">Sumatera Barat</strong></div><span style="font-family: var(--font-grot); font-weight: 700; font-size: 14px; color: var(--forest);" class="">Rp 3.645<small style="font-size: 10px; font-weight: 500; font-family: var(--font-mono); color: var(--muted);">/kg</small></span></div><div style="width: 100%; height: 5px; background: rgba(20, 32, 26, 0.08); border-radius: 999px; overflow: hidden;"><div style="width: 99.7%; height: 100%; background: #149945; border-radius: 999px;"></div></div></div><div style="display: flex; flex-direction: column; gap: 5px; background: #FAF7EC; border: 1px solid var(--line-soft); border-radius: 10px; padding: 9px 12px;"><div style="display: flex; justify-content: space-between; align-items: center;"><div style="display: flex; align-items: center; gap: 8px;"><span style="width: 22px; height: 22px; border-radius: 6px; background: #EAD5C3; color: #7C2D12; font-family: var(--font-mono); font-weight: 800; font-size: 11px; display: grid; place-items: center;" class="">3</span><strong style="font-size: 13px; color: var(--forest); font-family: var(--font-grot); font-weight: 600;">Riau</strong></div><span style="font-family: var(--font-grot); font-weight: 700; font-size: 14px; color: var(--forest);" class="">Rp 3.631<small style="font-size: 10px; font-weight: 500; font-family: var(--font-mono); color: var(--muted);">/kg</small></span></div><div style="width: 100%; height: 5px; background: rgba(20, 32, 26, 0.08); border-radius: 999px; overflow: hidden;"><div style="width: 99.4%; height: 100%; background: #149945; border-radius: 999px;"></div></div></div><div style="display: flex; flex-direction: column; gap: 5px; background: #FAF7EC; border: 1px solid var(--line-soft); border-radius: 10px; padding: 9px 12px;"><div style="display: flex; justify-content: space-between; align-items: center;"><div style="display: flex; align-items: center; gap: 8px;"><span style="width: 22px; height: 22px; border-radius: 6px; background: #F3F0E3; border: 1px solid var(--line); color: var(--muted); font-family: var(--font-mono); font-weight: 700; font-size: 11px; display: grid; place-items: center;" class="">4</span><strong style="font-size: 13px; color: var(--forest); font-family: var(--font-grot); font-weight: 600;">Jambi</strong></div><span style="font-family: var(--font-grot); font-weight: 700; font-size: 14px; color: var(--forest);" class="">Rp 3.556<small style="font-size: 10px; font-weight: 500; font-family: var(--font-mono); color: var(--muted);">/kg</small></span></div><div style="width: 100%; height: 5px; background: rgba(20, 32, 26, 0.08); border-radius: 999px; overflow: hidden;"><div style="width: 97.3%; height: 100%; background: var(--green-deep); border-radius: 999px;"></div></div></div><div style="display: flex; flex-direction: column; gap: 5px; background: #FAF7EC; border: 1px solid var(--line-soft); border-radius: 10px; padding: 9px 12px;"><div style="display: flex; justify-content: space-between; align-items: center;"><div style="display: flex; align-items: center; gap: 8px;"><span style="width: 22px; height: 22px; border-radius: 6px; background: #F3F0E3; border: 1px solid var(--line); color: var(--muted); font-family: var(--font-mono); font-weight: 700; font-size: 11px; display: grid; place-items: center;" class="">5</span><strong style="font-size: 13px; color: var(--forest); font-family: var(--font-grot); font-weight: 600;">Kalimantan Tengah</strong></div><span style="font-family: var(--font-grot); font-weight: 700; font-size: 14px; color: var(--forest);" class="">Rp 3.480<small style="font-size: 10px; font-weight: 500; font-family: var(--font-mono); color: var(--muted);">/kg</small></span></div><div style="width: 100%; height: 5px; background: rgba(20, 32, 26, 0.08); border-radius: 999px; overflow: hidden;"><div style="width: 95.2%; height: 100%; background: var(--green-deep); border-radius: 999px;"></div></div></div></div><div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-top: 2px; padding-top: 8px; border-top: 1px dashed var(--line);"></div></div></aside>
 </div>
@@ -471,8 +449,7 @@ select{height:48px;font-size:16px} /* 16px: mencegah iOS zoom otomatis saat drop
 <div class="footer-inner">
 <div>
 <a class="logo" href="#">
-<!-- LOGO  -->
-<img alt="Logo GunungKebun" class="logo-mark-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" src="logoNEWgngkebun.png">
+<img alt="Logo GunungKebun" class="logo-mark-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUK36415VxvKq0IBz1w0XvjWIlshWucUwWXVGZ6orgRdNMUuknl37B7X-yqxLnCZMI6aBeD-v3Cas-HkQXXMftUCRqcXDoB4v_GKSPDM5NaQMHyjK_iquZauKex82UHE1qnWof18OAuFLLSOiv_08fQQ18Xnur9cz9LsLXmA-pLfLZG6HUQVuKzCn6esuoUG7v0_xYixlTa_mQxPLuzVO1QSEaODnSOJ6msUalKd68G8qVMjC_Aae3V9vyEUcSjkRhqw">
 <span class="logo-mark" style="display:none;">◈</span>
   GUNUNG<em style="color:#a5c331">KEBUN</em>
 </a>
@@ -484,13 +461,11 @@ Informasi disajikan berdasarkan wilayah kecamatan, sehingga petani dapat mengeta
 <div class="copyright"><span class="">© 2026 GUNUNGKEBUN.COM — All Right Reserved&nbsp; Aditya Subarna-Creator </span><span class="">Contact team@gunungkebun.com</span><span class="">● Active</span></div>
 </footer>
 <div class="toast" id="toast"><span class="toast-dot" style="background: rgb(217, 255, 61); color: rgb(14, 33, 23);">✓</span><span id="toastText"></span></div>
-<!-- SETOR HARGA JUAL TBS TERKINI: ke Form pelaporan harga -->
 <a aria-label="Setor harga TBS terkini" class="report-fab compact" href="https://docs.google.com/forms/d/e/1FAIpQLSdaSQlMi4PfVL7P0YOUx0GTjCRuZRtcQkw79fkKj1ogXmw0Lw/viewform?usp=header" id="reportFab" rel="noopener" target="_blank">
 <span class="fab-ico">+</span>
 <span class="fab-label">Setor Harga <span class="fab-sub">TBS Terkini</span></span>
 </a>
 <script>
-/* Tombol "Setor Harga" otomatis. */
 (function(){
   const fab=document.getElementById('reportFab');
   const footerEl=document.getElementById('tentang');
@@ -522,10 +497,6 @@ const trendValue=document.getElementById('trendValue');
 const trendNote=document.getElementById('trendNote');
 const siteHeader=document.getElementById('siteHeader');
 
-/* ========
-   RENDER TICKER OTOMATIS
-   TICKER_PROVINCES
-====== */
 const TICKER_PROVINCES=["Aceh","Riau","Sumatera Utara","Sumatera Barat","Jambi","Bengkulu","Lampung","Kepulauan Bangka Belitung","Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara",
                           "Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Papua Barat"
 ];
@@ -547,7 +518,7 @@ function renderTicker(){
     if(max==null)return null;
     return "<span>"+p+": <b>"+fmt(max)+"/kg</b></span><span class=\"sep\">/</span>";
   }).filter(Boolean);
-  if(!items.length)return; // data belum ada, biarkan fallback statis tetap tampil
+  if(!items.length)return;
   const head="<span><span class=\"dot\"></span><b>HARGA TERTINGGI TBS Swadaya</b></span><span class=\"sep\">/</span>"+
              "<span>Data per kecamatan • Update di hari kerja</span><span class=\"sep\">/</span>";
   const group=head+items.join("");
@@ -559,7 +530,6 @@ function renderTicker(){
 
 const URL_API_HARGA="https://script.google.com/macros/s/AKfycby7Neph2HMxlhaapyN42YR1pvqowOJ2zbQYBgPSgyM0ClF48KDniDRdolvHHeLP2U80/exec";
 
-/* provinsi di daftar ini yang ditampilkan di dropdown */
 const ALLOWED_PROVINCES=["Aceh","Sumatera Utara","Sumatera Barat","Riau","Jambi","Sumatera Selatan","Kepulauan Bangka Belitung","Bengkulu","Lampung","Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara","Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Papua Barat"];
 const KALIMANTAN_PROVINCES=["Kalimantan Barat","Kalimantan Tengah","Kalimantan Timur","Kalimantan Selatan","Kalimantan Utara"];
 const SULAWESI_PROVINCES=["Sulawesi Barat","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo"];
@@ -567,13 +537,10 @@ const PAPUA_PROVINCES=["Papua Barat"];
 
 const PROV_CODE={"Aceh":"BTJ","Sumatera Utara":"KNO","Sumatera Barat":"PDG","Riau":"PKU","Jambi":"DJB","Sumatera Selatan":"PLM","Bengkulu":"BKS","Lampung":"TKG","Kepulauan Bangka Belitung":"PGK","Kalimantan Barat":"PNK","Kalimantan Tengah":"PKY","Kalimantan Timur":"BPN","Kalimantan Selatan":"BDJ","Kalimantan Utara":"TRK","Sulawesi Barat":"MJU","Sulawesi Tengah":"PLW","Sulawesi Selatan":"UPG","Sulawesi Tenggara":"KDI","Gorontalo":"GTO","Papua Barat":"MKW",};
 
-/* ========
-   ESTIMASI HARGA PER USIA TANAMAN
-======== */
 const AGES=[["3","3 Tahun",0.86,true],["4","4 Tahun",0.90,true],["★","10–20 Tahun",1.00,false],["21+","21 Tahun ke atas",0.97,true]];
 
 let hargaTBS={};
-let statusDataHarga="memuat"; // memuat | siap | gagal
+let statusDataHarga="memuat";
 
 function fmt(n){return "Rp "+Math.round(n).toLocaleString("id-ID");}
 
@@ -736,18 +703,13 @@ renderBoard(province.value,regency.value,district.value,true);
 updateJarak();
 showToast('Menampilkan harga Kec. '+district.value+', '+regency.value+'.',true);
 });
-/* ======
-   KONDISI JARAK & MEDAN KE RAMP/PKS
-========= */
 const URL_KATEGORI_JARAK="https://docs.google.com/spreadsheets/d/e/2PACX-1vSewWgXLwCcRlq9HclGwZqYw2hqfTkAaTRicApDEWdiRrdZVRCPyMbHTmQYPOS91pb1ZeevyJJ4JAbT/pub?gid=779572419&single=true&output=csv";
 const jarakValue=document.getElementById('jarakValue');
 let kategoriJarak={};
 let kategoriJarak2={};
-let kategoriStatus="memuat"; // memuat | siap | gagal
+let kategoriStatus="memuat";
 function normKey(s){return String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");}
-/* "Kabupaten Banggai" = "Kab. Banggai" = "Banggai" -> semuanya jadi "banggai" */
 function normKab(s){return String(s||"").toLowerCase().replace(/\./g," ").replace(/\s+/g," ").trim().replace(/^(kabupaten|kab)\s+/,"").replace(/[^a-z0-9]/g,"");}
-/* cadangan: buang juga awalan "kota" */
 function normKab2(s){return normKab(s).replace(/^kota/,"");}
 function parseCSV(text){
   const rows=[];let row=[],cur="",q=false;
@@ -877,7 +839,6 @@ function updateStampAverage(){
   animateCount(document.getElementById('stampNumberPapua'),papua.avg*0.9,papua.avg,"");
   document.getElementById('stampKecPapua').textContent=papua.count;
 }
-/* Kartu hero  */
 let stampSlideIdx=0;
 const STAMP_REGION_LABELS=["SUMATERA","KALIMANTAN","SULAWESI","PAPUA",];
 function showStampSlide(i){
