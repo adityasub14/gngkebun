@@ -126,6 +126,8 @@ h1 .highlight::after{content:"";position:absolute;height:13px;background:linear-
 .stamp-change{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:var(--lime);color:var(--forest);padding:6px 10px;border-radius:999px;font:600 10px var(--font-mono);letter-spacing:.02em}
 .stamp-spark{position:relative;z-index:1;margin-top:13px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 12px 8px;backdrop-filter:blur(6px)}
 .stamp-spark svg{width:100%;height:44px;display:block}
+.stamp-spark svg circle{animation:sparkPulse 2.2s ease-in-out infinite}
+@keyframes sparkPulse{0%,100%{opacity:1}50%{opacity:.4}}
 .stamp-spark div{display:flex;justify-content:space-between;font:500 8.5px var(--font-mono);opacity:.6;margin-top:4px;letter-spacing:.06em}
 .stamp-shadow{position:absolute;inset:12px -10px -10px 10px;background:linear-gradient(180deg,rgba(14,33,23,.18),transparent);border-radius:var(--r-l);z-index:1;filter:blur(2px)}
 .search-section{background:transparent;border:0;position:relative;z-index:2;padding:10px 28px 0}
@@ -256,10 +258,10 @@ footer::before{content:"GUNUNGKEBUN";position:absolute;bottom:-18px;left:50%;tra
 @media (max-width:1080px){
 .hero{grid-template-columns:1fr;gap:28px;padding:40px 20px 26px}
 h1{font-size:clamp(33px,9vw,50px)}
-.hero-stamp-wrap{justify-self:start;width:min(340px,100%);margin-top:104px;margin-right:0}
+.hero-stamp-wrap{justify-self:start;width:min(340px,100%);margin-top:142px;margin-right:0}
 .stamp-shift{transform:none}
 .hero-stamp{transform:rotate(0)}
-.hero-img-card{top:-96px;right:10px;width:126px}
+.hero-img-card{top:-140px;right:10px;width:126px}
 .hero-img-card img{height:56px}
 .price-layout{grid-template-columns:1fr}
 .side-stack{grid-template-columns:1fr 1fr}
@@ -307,7 +309,7 @@ select{min-width:0;text-overflow:ellipsis;white-space:nowrap}
 .search-btn{grid-column:auto;min-width:0;width:100%;height:48px;font-size:12px}
 select{height:48px;font-size:16px}
 }
-@media (max-width:1080px){.hero-img-card.img-2{top:-100px !important;right:148px !important;transform:rotate(-4deg) !important;z-index:4 !important}}
+@media (max-width:1080px){.hero-img-card.img-2{top:-144px !important;right:148px !important;transform:rotate(-4deg) !important;z-index:4 !important}}
 </style>
 </head><body><svg aria-hidden="true" class="inline-defs-container" style="position:absolute;width:0;height:0;overflow:hidden"></svg><style>.ticker{color:#ffffff !important}.ticker span{color:#ffffff}.ticker b{color:#7cff11 !important}.ticker .sep{color:rgba(255,255,255,0.4) !important}</style>
 
@@ -889,4 +891,96 @@ wrap.addEventListener('mouseleave',()=>{stamp.style.transform='rotate(1.2deg)';}
 
 
 
+<script>
+(function(){
+  const URL_API_TREN = "https://script.google.com/macros/s/AKfycby7Neph2HMxlhaapyN42YR1pvqowOJ2zbQYBgPSgyM0ClF48KDniDRdolvHHeLP2U80/exec";
+  const svg = document.querySelector('.stamp-spark svg');
+  if(!svg) return;
+  const line = document.getElementById('sparkLine');
+  const fill = document.getElementById('sparkFill');
+  const dot = svg.querySelector('circle');
+  if(!line || !fill) return;
+  const W=260, H=44, padY=7;
+
+  function buildPath(vals){
+    const n=vals.length;
+    const min=Math.min.apply(null,vals), max=Math.max.apply(null,vals), span=(max-min)||1;
+    const X=i=> n===1 ? W : (W*i/(n-1));
+    const Y=v=> H-padY-((v-min)/span)*(H-padY*2);
+    const pts=vals.map((v,i)=>X(i).toFixed(1)+","+Y(v).toFixed(1));
+    return {d:"M"+pts.join(" L"), fill:"M"+pts.join(" L")+" L"+W+","+H+" L0,"+H+" Z", lx:X(n-1), ly:Y(vals[n-1])};
+  }
+  function animateDraw(){
+    try{
+      const len=line.getTotalLength();
+      line.style.transition="none";
+      line.style.strokeDasharray=len; line.style.strokeDashoffset=len;
+      void line.getBoundingClientRect();
+      line.style.transition="stroke-dashoffset 1.6s ease";
+      line.style.strokeDashoffset="0";
+    }catch(e){}
+  }
+  function draw(vals){
+    const p=buildPath(vals);
+    line.setAttribute('d',p.d);
+    fill.setAttribute('d',p.fill);
+    if(dot){ dot.setAttribute('cx',p.lx); dot.setAttribute('cy',p.ly); }
+    animateDraw();
+  }
+  function pnum(s){
+    s=String(s==null?"":s).replace(/[^\d.,]/g,"");
+    if(!s) return null;
+    if(/,\d{1,2}$/.test(s)) s=s.replace(/\./g,"").replace(",",".");
+    else s=s.replace(/\./g,"").replace(/,/g,"");
+    const n=parseFloat(s); return isFinite(n)&&n>0 ? n : null;
+  }
+  function normH(h){ return String(h||"").toLowerCase().replace(/[^a-z0-9]/g,""); }
+  function parseTren(rows){
+    if(!Array.isArray(rows) || !rows.length) return [];
+    if(!Array.isArray(rows[0])){
+      return rows.map(r=>({t:String(r.tanggal||r.periode||""), v:pnum(r.tbs_10_20)||pnum(r.tbs_9)||pnum(r.tbs)||pnum(r.harga)})).filter(r=>r.v);
+    }
+    const head=rows[0].map(normH);
+    let iDate=head.findIndex(h=>h.indexOf("tanggal")===0||h.indexOf("tgl")===0||h.indexOf("date")===0||h.indexOf("periode")===0);
+    let iVal=head.findIndex(h=>h.indexOf("tbs")>=0 && /\d/.test(h));
+    if(iVal<0) iVal=head.findIndex(h=>h.indexOf("tbs")>=0);
+    if(iVal<0) iVal=head.findIndex(h=>h.indexOf("harga")>=0);
+    if(iVal<0) return [];
+    return rows.slice(1).map(r=>({t:iDate>=0?String(r[iDate]||""):"", v:pnum(r[iVal])})).filter(r=>r.v);
+  }
+  function setDelta(cur,prev){
+    const host=document.getElementById('stampRegionLabel');
+    if(!host || cur==null || prev==null) return;
+    const diff=cur-prev, pct=prev?diff/prev*100:0, up=diff>=0;
+    let chip=document.getElementById('sparkDelta');
+    if(!chip){
+      chip=document.createElement('span'); chip.id='sparkDelta';
+      chip.style.cssText="margin-left:8px;font-weight:700;padding:1px 7px;border-radius:999px;font-size:8px;letter-spacing:.04em";
+      if(host.parentElement) host.parentElement.appendChild(chip);
+    }
+    chip.textContent=(up?"▲ ":"▼ ")+Math.abs(pct).toLocaleString("id-ID",{maximumFractionDigits:1})+"% minggu ini";
+    chip.style.background=up?"rgba(217,255,61,.16)":"rgba(255,120,110,.18)";
+    chip.style.color=up?"#D9FF3D":"#ffb4ab";
+  }
+  function keepAlive(){ setInterval(animateDraw, 5000); }
+  function loadReal(){
+    return fetch(URL_API_TREN+"?sheet=tren").then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(j=>{
+      if(!j || j.error || !Array.isArray(j.rows)) throw 0;
+      let pts=parseTren(j.rows);
+      const dated=pts.filter(p=>/^\d{4}-\d{2}-\d{2}$/.test(p.t));
+      if(dated.length>=2){ dated.sort((a,b)=>a.t<b.t?-1:1); pts=dated; }
+      if(pts.length<2) throw 0;
+      const last=pts.slice(-9).map(p=>p.v);
+      draw(last);
+      setDelta(last[last.length-1], last[last.length-2]);
+      return true;
+    });
+  }
+  if(URL_API_TREN){
+    loadReal().then(keepAlive).catch(()=>{ animateDraw(); keepAlive(); });
+  } else {
+    animateDraw(); keepAlive();
+  }
+})();
+</script>
 </body></html>
